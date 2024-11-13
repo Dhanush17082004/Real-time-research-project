@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer Early Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: 'Hind', sans-serif;
+    }
+
+    .login {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-family: 'Arimo', sans-serif;
+      font-size: 16px;
+    }
+
+    .login input[type="text"]:focus {
+      border-color: #6c63ff;
+      outline: none;
+    }
+
+    .btn {
+      background: #6c63ff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #5753d3;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>Cancer Early Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="Age" placeholder="Age" required="required" />
+      <input type="text" name="Gender" placeholder="Gender" required="required" />
+      <input type="text" name="AirPollution" placeholder="Air Pollution" required="required" />
+      <input type="text" name="Alcoholuse" placeholder="Alcohol Use" required="required" />
+      <input type="text" name="DustAllergy" placeholder="Dust Allergy" required="required" />
+      <input type="text" name="OccuPationalHazards" placeholder="Occupational Hazards" required="required" />
+      <input type="text" name="GeneticRisk" placeholder="Genetic Risk" required="required" />
+      <input type="text" name="chronicLungDisease" placeholder="Chronic Lung Disease" required="required" />
+      <input type="text" name="BalancedDiet" placeholder="Balanced Diet" required="required" />
+      <input type="text" name="Obesity" placeholder="Obesity" required="required" />
+      <input type="text" name="Smoking" placeholder="Smoking" required="required" />
+      <input type="text" name="PassiveSmoker" placeholder="Passive Smoker" required="required" />
+      <input type="text" name="ChestPain" placeholder="Chest Pain" required="required" />
+      <input type="text" name="CoughingofBlood" placeholder="Coughing of Blood" required="required" />
+      <input type="text" name="Fatigue" placeholder="Fatigue" required="required" />
+      <input type="text" name="WeightLoss" placeholder="Weight Loss" required="required" />
+      <input type="text" name="ShortnessofBreath" placeholder="Shortness of Breath" required="required" />
+      <input type="text" name="Wheezing" placeholder="Wheezing" required="required" />
+      <input type="text" name="SwallowingDifficulty" placeholder="Swallowing Difficulty" required="required" />
+      <input type="text" name="ClubbingofFingerNails" placeholder="Clubbing of Finger Nails" required="required" />
+      <input type="text" name="FrequentCold" placeholder="Frequent Cold" required="required" />
+      <input type="text" name="DryCough" placeholder="Dry Cough" required="required" />
+      <input type="text" name="Snoring" placeholder="Snoring" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{ prediction_text }}
+  </div>
+</body>
+</html>
